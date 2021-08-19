@@ -1,0 +1,88 @@
+        * {
+            color: #67748e;
+        }
+
+        .cs-card {
+            width: 220px !important;
+        }
+
+        @media (min-width: 1200px) {
+            .col-xl-3 {
+                width: 20% !important;
+            }
+        }
+
+        .text-xs {
+            font-size: 13px;
+            text-transform: capitalize !important;
+        }
+
+        .chkbox {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #828282;
+            border-radius: 3px;
+            float: left;
+            margin: 3px 10px 0 0;
+            display: inline-block;
+        }
+
+        .nav-tabs {
+            border: none !important;
+        }
+
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+            border: none !important;
+        }
+
+        #org-health {
+            border-left: 4px solid #cce314;
+            color: #67748e;
+        }
+
+        #admin {
+            border-left: 4px solid #4493d6;
+            color: #67748e;
+        }
+
+        #roles {
+            border-left: 4px solid #f68615;
+            color: #67748e;
+        }
+
+        #actv-users {
+            border-left: 4px solid #40b93c;
+            color: #67748e;
+        }
+
+        #loggedin {
+            border-left: 4px solid #ed1d27;
+            color: #67748e;
+        }
+
+        .file-remain, .data-remain {
+            background-color: #c4c4c4;
+        }
+
+        .file-used, .data-used {
+            background-color: #40b93c;
+        }
+
+        .chckbox-active {
+            width: 18px;
+            height: 18px;
+            background-color: #40b93c;
+            border: 1px solid #40b93c;
+        }
+
+        .chkbox {
+            cursor: pointer;
+        }
+        .nav-link {
+            color: #828282 !important;
+            cursor: pointer;
+        }
+       nav .active {
+            color: #67748e !important;
+            font-weight: bold !important;
+        }
