@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstarp5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="h3 pt-3 mb-0">Salesforce Org Scorecard</h1>
+            </div>
+        </div>
+        <!-- Org Select -->
+        <div class="row mt-4">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label class="form-label">Select Salesforce Organization</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>DFE Pharma</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Org Highlights starts -->
+        <div class="row mt-4">
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="org-highlights">
+                    <span>Org Name</span>
+                    <p class="fw-bold">DFE Pharma</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="org-highlights">
+                    <span>Org ID</span>
+                    <p class="fw-bold">DFE Pharma</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="org-highlights">
+                    <span>Org Owner</span>
+                    <p class="fw-bold">DFE Pharma</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Org Highlights Info Box -->
+        <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card cs-card shadow h-100 py-2" id="org-health">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  mb-1">
+                                    Org Health</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">52%</div>
+                            </div>
+                            <div class="col-auto">
+                                <img src="assets/sentiment_very_dissatisfied.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card cs-card shadow h-100 py-2" id="admin">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  mb-1">
+                                    Admins</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">22</div>
+                            </div>
+                            <div class="col-auto">
+                                <img src="assets/ic_sharp-admin-panel-settings.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card cs-card shadow h-100 py-2" id="roles">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  mb-1">
+                                    Roles</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">69</div>
+                            </div>
+                            <div class="col-auto">
+                                <img src="assets/icon-park-outline_every-user.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card cs-card shadow h-100 py-2" id="actv-users">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  mb-1">
+                                    Active Users</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">52%</div>
+                            </div>
+                            <div class="col-auto">
+                                <img src="assets/how_to_reg.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card cs-card shadow h-100 py-2" id="loggedin">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  mb-1">
+                                    Users not Logged In</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">52%</div>
+                            </div>
+                            <div class="col-auto">
+                                <img src="assets/bx_bxs-user-x.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xs-6 col-md-6">
+                <div class="card shadow h-100">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold">File Storage</h6>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Maximum <span>40%</span></h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar file-max" role="progressbar" style="width: 40%" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Remaining <span>40%</span>
+                        </h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar file-remain" role="progressbar" style="width: 40%"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Used <span>40%</span></h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar file-used" role="progressbar" style="width: 40%" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xs-6 col-md-6">
+                <div class="card shadow h-100">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold">Data Storage</h6>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Maximum <span>100%</span></h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar data-max" role="progressbar" style="width: 105%"
+                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Remaining <span>40%</span>
+                        </h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar data-remain" role="progressbar" style="width: 40%"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h4 class="small font-weight-bold d-flex justify-content-between">Used <span>60%</span></h4>
+                        <div class="progress rounded-pill mb-4">
+                            <div class="progress-bar data-used" role="progressbar" style="width: 60%" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Org Info -->
+        <div class="row mt-5">
+            <div class="col-xs-12">
+                <h2 class="h3 pt-3 mb-4">Select Org Information</h2>
+            </div>
+        </div>
+
+        <!-- Tab Formation -->
+        <nav class="mb-5">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <div class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-all" role="tab">
+
+                    <span class="chkbox chckbox-active"></span>
+                    All
+
+                </div>
+                <div class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-license" role="tab">
+
+                    <span class="chkbox"></span>
+                    License
+
+                </div>
+                <div class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-security" role="tab">
+
+                    <span class="chkbox"></span>
+                    Security
+
+                </div>
+                <div class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-metadata" role="tab">
+
+                    <span class="chkbox"></span>
+                    Metadata
+
+                </div>
+
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-all" role="tabpanel">
+                <!-- License -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="card border shadow h-100">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold ">License Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <table id="example1" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>License Name</th>
+                                            <th>Total number of licenses</th>
+                                            <th>License Used</th>
+                                            <th>License Remaining</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ashton Cox</td>
+                                            <td>Junior Technical Author</td>
+                                            <td>San Francisco</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cedric Kelly</td>
+                                            <td>Senior Javascript Developer</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brielle Williamson</td>
+                                            <td>Integration Specialist</td>
+                                            <td>New York</td>
+                                            <td>61</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Herrod Chandler</td>
+                                            <td>Sales Assistant</td>
+                                            <td>San Francisco</td>
+                                            <td>59</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rhona Davidson</td>
+                                            <td>Integration Specialist</td>
+                                            <td>Tokyo</td>
+                                            <td>55</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Colleen Hurst</td>
+                                            <td>Javascript Developer</td>
+                                            <td>San Francisco</td>
+                                            <td>39</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sonya Frost</td>
+                                            <td>Software Engineer</td>
+                                            <td>Edinburgh</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jena Gaines</td>
+                                            <td>Office Manager</td>
+                                            <td>London</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quinn Flynn</td>
+                                            <td>Support Lead</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Charde Marshall</td>
+                                            <td>Regional Director</td>
+                                            <td>San Francisco</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Haley Kennedy</td>
+                                            <td>Senior Marketing Designer</td>
+                                            <td>London</td>
+                                            <td>43</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Information -->
+                <div class="row mt-4">
+                    <div class="col-xs-12">
+                        <div class="card border shadow h-100">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold ">Security Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Security Setting</th>
+                                            <th>Issue Count</th>
+                                            <th>View Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>Update software</td>
+                                            <td>
+                                                <span>5</span>
+                                            </td>
+                                            <td>
+                                                <div data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                                    <span>View more</span><img class="px-2"
+                                                        src="assets/clarity_pop-out-line.svg" alt="popout">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Clean database</td>
+                                            <td>
+                                                <span>10</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cron job running</td>
+                                            <td>
+                                                <span>6</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fix and squish bugs</td>
+                                            <td>
+                                                <span>8</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">License Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table id="example2" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Security Setting</th>
+                                                    <th>Status</th>
+                                                    <th>Setting</th>
+                                                    <th>Setting Group</th>
+                                                    <th>Current Org Setup</th>
+                                                    <th>Recommended Standard Setup</th>
+                                                    <th>Configuration Link</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td>2011/04/25</td>
+                                                    <td>$320,800</td>
+                                                    <td><span>View more</span><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>63</td>
+                                                    <td>2011/07/25</td>
+                                                    <td>$170,750</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>San Francisco</td>
+                                                    <td>66</td>
+                                                    <td>2009/01/12</td>
+                                                    <td>$86,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cedric Kelly</td>
+                                                    <td>Senior Javascript Developer</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>22</td>
+                                                    <td>2012/03/29</td>
+                                                    <td>$433,060</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Airi Satou</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>33</td>
+                                                    <td>2008/11/28</td>
+                                                    <td>$162,700</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brielle Williamson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>New York</td>
+                                                    <td>61</td>
+                                                    <td>2012/12/02</td>
+                                                    <td>$372,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Herrod Chandler</td>
+                                                    <td>Sales Assistant</td>
+                                                    <td>San Francisco</td>
+                                                    <td>59</td>
+                                                    <td>2012/08/06</td>
+                                                    <td>$137,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rhona Davidson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>Tokyo</td>
+                                                    <td>55</td>
+                                                    <td>2010/10/14</td>
+                                                    <td>$327,900</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Colleen Hurst</td>
+                                                    <td>Javascript Developer</td>
+                                                    <td>San Francisco</td>
+                                                    <td>39</td>
+                                                    <td>2009/09/15</td>
+                                                    <td>$205,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sonya Frost</td>
+                                                    <td>Software Engineer</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>23</td>
+                                                    <td>2008/12/13</td>
+                                                    <td>$103,600</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jena Gaines</td>
+                                                    <td>Office Manager</td>
+                                                    <td>London</td>
+                                                    <td>30</td>
+                                                    <td>2008/12/19</td>
+                                                    <td>$90,560</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Quinn Flynn</td>
+                                                    <td>Support Lead</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>22</td>
+                                                    <td>2013/03/03</td>
+                                                    <td>$342,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Charde Marshall</td>
+                                                    <td>Regional Director</td>
+                                                    <td>San Francisco</td>
+                                                    <td>36</td>
+                                                    <td>2008/10/16</td>
+                                                    <td>$470,600</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Haley Kennedy</td>
+                                                    <td>Senior Marketing Designer</td>
+                                                    <td>London</td>
+                                                    <td>43</td>
+                                                    <td>2012/12/18</td>
+                                                    <td>$313,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-license" role="tabpanel">
+                <div class="row mt-4">
+                    <div class="col-xs-12">
+                        <div class="card border shadow h-100">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold ">License Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <table id="example3" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>License Name</th>
+                                            <th>Total number of licenses</th>
+                                            <th>License Used</th>
+                                            <th>License Remaining</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ashton Cox</td>
+                                            <td>Junior Technical Author</td>
+                                            <td>San Francisco</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cedric Kelly</td>
+                                            <td>Senior Javascript Developer</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brielle Williamson</td>
+                                            <td>Integration Specialist</td>
+                                            <td>New York</td>
+                                            <td>61</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Herrod Chandler</td>
+                                            <td>Sales Assistant</td>
+                                            <td>San Francisco</td>
+                                            <td>59</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rhona Davidson</td>
+                                            <td>Integration Specialist</td>
+                                            <td>Tokyo</td>
+                                            <td>55</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Colleen Hurst</td>
+                                            <td>Javascript Developer</td>
+                                            <td>San Francisco</td>
+                                            <td>39</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sonya Frost</td>
+                                            <td>Software Engineer</td>
+                                            <td>Edinburgh</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jena Gaines</td>
+                                            <td>Office Manager</td>
+                                            <td>London</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quinn Flynn</td>
+                                            <td>Support Lead</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Charde Marshall</td>
+                                            <td>Regional Director</td>
+                                            <td>San Francisco</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Haley Kennedy</td>
+                                            <td>Senior Marketing Designer</td>
+                                            <td>London</td>
+                                            <td>43</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-security" role="tabpanel">
+                <!-- Info Select -->
+                <div class="row mt-4">
+                    <div class="col-xs-12">
+                        <div class="card border shadow h-100">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold ">Security Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Security Setting</th>
+                                            <th>Issue Count</th>
+                                            <th>View Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>Update software</td>
+                                            <td>
+                                                <span>5</span>
+                                            </td>
+                                            <td>
+                                                <div data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <span>View more</span><img class="px-2"
+                                                        src="assets/clarity_pop-out-line.svg" alt="popout">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Clean database</td>
+                                            <td>
+                                                <span>10</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cron job running</td>
+                                            <td>
+                                                <span>6</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fix and squish bugs</td>
+                                            <td>
+                                                <span>8</span>
+                                            </td>
+                                            <td><span>View more</span><img class="px-2"
+                                                    src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">License Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table id="example" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Security Setting</th>
+                                                    <th>Status</th>
+                                                    <th>Setting</th>
+                                                    <th>Setting Group</th>
+                                                    <th>Current Org Setup</th>
+                                                    <th>Recommended Standard Setup</th>
+                                                    <th>Configuration Link</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td>2011/04/25</td>
+                                                    <td>$320,800</td>
+                                                    <td><span>View more</span><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>63</td>
+                                                    <td>2011/07/25</td>
+                                                    <td>$170,750</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>San Francisco</td>
+                                                    <td>66</td>
+                                                    <td>2009/01/12</td>
+                                                    <td>$86,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cedric Kelly</td>
+                                                    <td>Senior Javascript Developer</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>22</td>
+                                                    <td>2012/03/29</td>
+                                                    <td>$433,060</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Airi Satou</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>33</td>
+                                                    <td>2008/11/28</td>
+                                                    <td>$162,700</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brielle Williamson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>New York</td>
+                                                    <td>61</td>
+                                                    <td>2012/12/02</td>
+                                                    <td>$372,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Herrod Chandler</td>
+                                                    <td>Sales Assistant</td>
+                                                    <td>San Francisco</td>
+                                                    <td>59</td>
+                                                    <td>2012/08/06</td>
+                                                    <td>$137,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rhona Davidson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>Tokyo</td>
+                                                    <td>55</td>
+                                                    <td>2010/10/14</td>
+                                                    <td>$327,900</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Colleen Hurst</td>
+                                                    <td>Javascript Developer</td>
+                                                    <td>San Francisco</td>
+                                                    <td>39</td>
+                                                    <td>2009/09/15</td>
+                                                    <td>$205,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sonya Frost</td>
+                                                    <td>Software Engineer</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>23</td>
+                                                    <td>2008/12/13</td>
+                                                    <td>$103,600</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jena Gaines</td>
+                                                    <td>Office Manager</td>
+                                                    <td>London</td>
+                                                    <td>30</td>
+                                                    <td>2008/12/19</td>
+                                                    <td>$90,560</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Quinn Flynn</td>
+                                                    <td>Support Lead</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>22</td>
+                                                    <td>2013/03/03</td>
+                                                    <td>$342,000</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Charde Marshall</td>
+                                                    <td>Regional Director</td>
+                                                    <td>San Francisco</td>
+                                                    <td>36</td>
+                                                    <td>2008/10/16</td>
+                                                    <td>$470,600</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Haley Kennedy</td>
+                                                    <td>Senior Marketing Designer</td>
+                                                    <td>London</td>
+                                                    <td>43</td>
+                                                    <td>2012/12/18</td>
+                                                    <td>$313,500</td>
+                                                    <td><a href="#">View more</a><img class="px-2"
+                                                            src="assets/clarity_pop-out-line.svg" alt="popout"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-metadata" role="tabpanel">
+                4
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
